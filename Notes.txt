@@ -1,0 +1,79 @@
+project setup
+	
+	1. Download and Install node.js prebuilt-installer
+		link: https://nodejs.org/en/download/prebuilt-installer
+
+	2. Install react native CLIsW
+		command:  npm install -g react-native-cli
+	
+	3. Download and install Android studio and SDK tools
+		link: https://developer.android.com/studio
+		
+		open android studio -> sdk manager -> 
+			1. unselect the show package details
+				1. In SDK Platforms
+				   select Android 15.0 ("vannilaIceCream") API level 35
+				   select Android 13.0 ("Tiramisu") API level 33
+				
+				2. In SDK Tools and unselect the show package details
+					make sure this selected
+						1. Android SDK Build-Tools 35
+						2. Android SDK Command-line Tools
+						3. Android Emulator
+						4. Android Emulator hypervisor driver
+						5. Android SDK platform-Tools
+						6. Google play licensing library
+		
+		Add android home path under environment variable user variable
+			Variable_name: ANDROID_HOME
+			Variable_value: C:\Users\Manojkumar\AppData\Local\Android\Sdk	
+
+		Add android paths under environment variable user variable path section
+			path:  	
+				C:\Users\Manojkumar\AppData\Local\Android\Sdk
+				C:\Users\Manojkumar\AppData\Local\Android\Sdk\emulator
+				C:\Users\Manojkumar\AppData\Local\Android\Sdk\platform-tools
+				C:\Users\Manojkumar\AppData\Local\Android\Sdk\cmdline-tools
+				C:\Users\Manojkumar\AppData\Local\Android\Sdk\cmdline-tools\13.0\bin
+
+
+	4. Create virtual device in android studio device manager
+	
+	5. Run react nativ doctor to check which version java jdk is compartible
+		command: npx react-native doctor
+
+	6. Java jdk installation in windows
+		1. Download and install use version jdk version 17 to 20 right now
+			link: https://www.oracle.com/java/technologies/javase/jdk19-archive-downloads.html
+			download the windows x64 installer.
+		
+		2. Add android home path under environment variable user variable
+			Variable_name: JAVA_HOME
+			Variable_value: C:\Program Files\Java\jdk
+		
+		3. Restart the system to take effects
+		
+		4. Again run doctor:  npx react-native-doctor
+
+
+	7. create react native project for that search : create react native first project without framework
+		link: https://reactnative.dev/docs/getting-started-without-a-framework
+
+		command: npx @react-native-community/cli@latest init AwesomeProject
+	
+	8. build and run in android studio
+		open the project -> android folder in android studio
+		It will build after successful build run the emulator
+	
+	9. project terminal reverse the port
+		command: adb reverse tcp:8081 8081
+
+	10. Then start the server
+		command : npm start
+	
+	11. Run in android
+		In terminal press a for android or directly in android studio run btn
+	
+	12. To see error messages
+		1. For project setup related errors run this inside app foler: npx react-native doctor
+		2. For gradle related errors run this inside android foler:  ./gradlew build --warning-mode all

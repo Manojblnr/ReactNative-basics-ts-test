@@ -1,0 +1,48 @@
+
+Testing implementation
+	
+	React native CLI app default have jest but we need to install react-testing-library
+
+	link: https://testing-library.com/docs/react-testing-library/intro
+
+	Command :  npm install --save-dev @testing-library/react @testing-library/dom @types/react @types/react-dom
+
+
+Ex:
+    Scenario : Unit Testing for login page 
+
+	1. create login page component 
+
+	2. Install testing library:
+		command: npm install --save-dev @testing-library/react-native jest
+				 npm i --save-dev @types/jest
+
+	3. Then create test file for the component inside the _tests_ folder
+		Ex: for Login.tsx -> Login.test.tsx
+	
+	4. Write the test cases for all the possible results
+	
+	5. configure the jest for code coverage
+		1. In jest.config.js file 
+			Add code: module.exports = {
+						preset: 'react-native',
+						"collectCoverage": true,
+						"coverageDirectory": "coverage",
+						"coverageReporters": ["text", "lcov"]
+					};
+	6. In package.json file add a new command under script section
+        "coverage" : "npm test --coverage"
+
+	6. Run the test cases and get coverage
+		command: use any one command of this :
+				1. npm run coverage
+				2. npm test --coverage
+				3. npm test
+
+	
+	8. Now we can see report in terminal and coverage html files in coverage folder
+		1. To see report in html, open index.html inside the Icov-report 
+		2. For Automation and CI/CD: Use lcov.info
+
+    
+    
